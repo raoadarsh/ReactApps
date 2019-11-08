@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 
 export default function App() {
-  const [outputText, setOutputText] = useState("Adarsh");
+  const [mystate, setmystate] = useState(false);
+
+  const setTextChange = () => {
+    setmystate(!mystate);
+  };
   return (
     <View style={styles.container}>
-      <Text>{outputText}</Text>
-      <Button title="Change Text" onPress={() => setOutputText("Sarvesh Rao")} />
+      <Text>{mystate ? "adarsh" : "Sarvesh"}</Text>
+      <Button title="Change text" onPress={setTextChange} />
     </View>
   );
 }
